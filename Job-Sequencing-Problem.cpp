@@ -1,11 +1,6 @@
 /*
 Sort the structure according to decreasing order of profit
 See the code
-
-ISSUE: ek example ke liye chala but dusre pe fail hua. Make it clear again
-
-				
-
 */
 
 
@@ -52,14 +47,7 @@ void Job_Sequence(struct Job arr[],int size)
 		{
 			cout<<" "<<arr[i].id;
 			last_printed_time=arr[i].deadline;
-		}
-		
-		//check condition:
-		//agla current time vohi hoga jo pichle printed time se > hoga bzoc we have exhausted Curr time in j loop 
-		//nhi to repitition hoga
-		//i++ karte jao jab tak condition satisfy nhi hogi 
-		//also first element is an exception bcoz tab kuch last printed nhi hai
-		
+		}		
 		
 		current_time=arr[i].deadline;
 		//cout<<"\ncurrent_time => "<<current_time;
@@ -81,6 +69,11 @@ void Job_Sequence(struct Job arr[],int size)
 				//karo agar remaining_time 0 hua to
 				if(remaining_time<=arr[j].deadline)
 				{
+					//check condition:
+					//agla current time vohi hoga jo pichle printed time se > hoga bzoc we have exhausted Curr time in j loop 
+					//nhi to repitition hoga
+					//i++ karte jao jab tak condition satisfy nhi hogi 
+					//also first element is an exception bcoz tab kuch last printed nhi hai
 					if(last_printed_time<=arr[j].deadline)
 					{
 						//print karo us job ko
